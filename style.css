@@ -21,7 +21,8 @@ html {
     border-radius: 50%;
     position: fixed;
     z-index: 99;
-    /* transition: all 0.2s ease; */
+    pointer-events: none;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 #cursor-blur {
@@ -32,6 +33,7 @@ html {
     position: fixed;
     filter: blur(50px);
     z-index: 9;
+    pointer-events: none;
 }
 
 #nav {
@@ -59,11 +61,7 @@ html {
     /* display: inline-block; */
 
 }
-#nav h4:hover{
-    border: 1px solid #fff;
-    border-radius: 50px;
-    background-color: rgba(255, 255, 255, 0.203);
-}
+
 video {
     height: 100%;
     width: 100%;
@@ -232,6 +230,7 @@ video {
     z-index: 10;
     overflow: hidden;
     transition: all ease 0.4s;
+
 }
 
 #card1 {
@@ -253,11 +252,13 @@ video {
     padding: 30px;
     padding-top: 80px;
     opacity: 0;
-    transition: all ease 0.6s;
+    transition: all ease 0.5s;
+    transform: translateY(-100%);
 }
 
 .card:hover .overlay {
     opacity: 1;
+    transform: translateY(0);
 }
 
 .overlay h4 {
